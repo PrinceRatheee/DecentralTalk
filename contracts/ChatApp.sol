@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.7.0 <0.9.0;
+pragma solidity ^0.8.24;
 
 contract ChatApp{
     //user struct
@@ -54,7 +54,7 @@ contract ChatApp{
         require(msg.sender!=friend_key,"User cannot send friend request to yourself");
         require(checkAlreadyFriends(msg.sender,friend_key)==false,"These users are already friends");
 
-        _addFriend(msg.sender,friend_key),name;
+        _addFriend(msg.sender,friend_key,name);
         _addFriend(friend_key,msg.sender,userList[msg.sender].name);
     }
 
@@ -66,8 +66,8 @@ contract ChatApp{
             pubKey2=pubKey1;
             pubKey1=temp;
         }
-        for (uint256 i-0;i<userList[pubKey1].friendList.length;i++){
-            if(userList[pubKey1].friendList[i].pubKey=pubKey2) return true;
+        for (uint256 i=0;i<userList[pubKey1].friendList.length;i++){
+            if(userList[pubKey1].friendList[i].pubKey==pubKey2) return true;
         }
         return false;
     }
@@ -94,7 +94,7 @@ contract ChatApp{
     }
 
     //SEND MESSAGE FUNCTION
-    function sendMessage(address friend_key,string callData _msg) external{
+    function sendMessage(address friend_key,string calldata _msg) external{
         require(checkUserExists(msg.sender),"Create an account first");
         require(checkUserExists(friend_key),"Friend is not registered");
         require(checkAlreadyFriends(msg.sender,friend_key),"You are not friend with the given user");
@@ -108,7 +108,7 @@ contract ChatApp{
     //READ MESSAGE FUNCTION
     function readMessage(address friend_key) external view returns(message[] memory){
         bytes32 chatCode=_getChatCode(msg.sender,friend_key);
-        return allMessages[chatCode]
+        return allMessages[chatCode];
     }
 
     // to get all the registered users 
