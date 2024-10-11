@@ -1,5 +1,5 @@
 "use client";
-import { ChatAppContext } from "../../context/ChatAppContext";
+
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,6 +9,7 @@ import images from "../../assets/index";
 import Model from "../Model/Model";
 import Error from "../Error/Error";
 import Style from "./Navbar.module.css";
+import { ChatAppContext } from "@/app/context/ChatAppContext";
 const Navbar = () => {
   const [active, setActive] = useState(2);
   const [open, setOpen] = useState(false);
@@ -131,14 +132,14 @@ const Navbar = () => {
       {openModel && (
         <div className={Style.modelBox}>
           <Model
-            openModel={setOpenModel}
+            openBox={setOpenModel}
             title="WELCOME TO"
             head="CHAT BUDDY"
             info="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit temporibus, soluta quasi in accusamus suscipit accusantium corrupti vero aliquam explicabo deserunt tempora rerum, nisi reiciendis distinctio quas deleniti? Culpa, fuga?"
             smaLLInfo="Kindly select your name .. "
-            images={images.hero}
+            image={images.hero}
             functionName={createAccount}
-          
+            address={account}
           />
 
         </div>

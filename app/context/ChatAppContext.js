@@ -13,7 +13,7 @@ export const ChatAppProvider = ({ children }) => {
     const [userName, setUserName] = useState("");
     const [friendLists, setFriendLists] = useState([]);
     const [friendMsg, setFriendMsg] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false); 
     const [userLists, setUserLists] = useState([]);
     const [error, setError] = useState("");
 
@@ -121,7 +121,7 @@ export const ChatAppProvider = ({ children }) => {
         }
     }
 
-
+  
     //READ INFO
     const readUser = async (userAddress) => {
         const contract = await connectingWithContract();

@@ -30,7 +30,7 @@ contract ChatApp{
     function checkUserExists(address pubKey) public view returns(bool){
         return bytes(userList[pubKey].name).length>0;
     }
-
+ 
 
     //Create account or Register User
     function createAccount(string calldata name) external{ // callData to save gas fee
@@ -39,7 +39,7 @@ contract ChatApp{
 
         userList[msg.sender].name=name;
         getAllUsers.push(AllUserStruct(name,msg.sender));
-    }
+    } 
 
     //GET USERNAME
     function getUsername(address  pubKey) external view returns(string memory){

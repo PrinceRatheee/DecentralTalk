@@ -6,7 +6,7 @@ async function main(){
 
     await upload.deployed();
 
-    console.log("Libraryy deployed to:" , upload.address);
+    console.log("Contract deployed to:" , upload.address);
 
 }
 

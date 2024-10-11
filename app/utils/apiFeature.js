@@ -43,7 +43,7 @@ export const connectingWithContract=async()=>{
         const contract=fetchContract(signer);
 
         return contract;
-    } catch (error) {
+    } catch (error) { 
         console.log(error);
     }
 }

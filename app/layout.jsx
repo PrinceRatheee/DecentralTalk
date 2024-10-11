@@ -2,9 +2,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 //INTERNAL IMPORT
-import { ChatAppProvider } from "../context/ChatAppContext";
-import Navbar from "../Components/Navbar/Navbar";
+
+import Navbar from "./Components/Navbar/Navbar";
 import { Toaster } from "react-hot-toast";
+import { ChatAppProvider } from "./context/ChatAppContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
